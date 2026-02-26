@@ -84,9 +84,17 @@ onUnmounted(() => {
     <Transition name="mobile-menu">
       <div v-if="mobileOpen" class="mobile-overlay" @click.self="mobileOpen = false">
         <div class="mobile-menu-content">
-          <div class="mobile-nav-links">
-            <router-link v-for="link in links" :key="link.path" :to="link.path" class="mobile-nav-link" @click="mobileOpen = false">
-              {{ link.name }}
+          <div class="mobile-menu-links">
+            <router-link
+              v-for="(link, i) in links"
+              :key="link.name"
+              :to="link.to"
+              class="mobile-link"
+              :class="{ 'mobile-link-active': route.name === link.name }"
+              @click="mobileOpen = false"
+            >
+              <span class="mobile-link-index">0{{ i + 1 }}</span>
+              {{ link.label }}
             </router-link>
           </div>
           <div class="mobile-menu-footer">

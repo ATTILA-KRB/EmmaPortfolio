@@ -9,6 +9,7 @@ import { socials } from '@/data/socials'
         <div>
           <div class="footer-logo">Emma Pertusot<span style="color: var(--accent)">.</span></div>
           <div class="footer-subtitle">Journaliste · Presse écrite</div>
+          <a href="mailto:epertusot@gmail.com" class="footer-email">epertusot@gmail.com</a>
         </div>
         <div class="footer-socials">
           <a v-for="s in socials" :key="s.name" :href="s.url" target="_blank" rel="noopener" class="footer-social">
@@ -18,7 +19,7 @@ import { socials } from '@/data/socials'
       </div>
       <div class="footer-bottom">
         <span>© {{ new Date().getFullYear() }} —  </span>
-        <router-link to="/contact" class="footer-legal">Mentions légales</router-link>
+        <span>Mentions légales (à remplir)</span>
       </div>
     </div>
   </footer>
@@ -50,6 +51,19 @@ import { socials } from '@/data/socials'
   color: var(--text3);
   font-size: 13px;
   line-height: 1.6;
+  margin-bottom: 12px;
+}
+.footer-email {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+.footer-email:hover {
+  color: var(--accent);
 }
 .footer-socials {
   display: flex;

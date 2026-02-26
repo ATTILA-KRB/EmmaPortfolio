@@ -13,7 +13,6 @@ const links = [
   { to: '/', label: 'Accueil', name: 'home' },
   { to: '/portfolio', label: 'Portfolio', name: 'portfolio' },
   { to: '/experiences', label: 'Expériences', name: 'experiences' },
-  { to: '/contact', label: 'Contact', name: 'contact' },
 ]
 
 function onScroll() {
@@ -85,24 +84,16 @@ onUnmounted(() => {
     <Transition name="mobile-menu">
       <div v-if="mobileOpen" class="mobile-overlay" @click.self="mobileOpen = false">
         <div class="mobile-menu-content">
-          <div class="mobile-menu-links">
-            <router-link
-              v-for="(link, i) in links"
-              :key="link.name"
-              :to="link.to"
-              class="mobile-link"
-              :class="{ 'mobile-link-active': route.name === link.name }"
-              :style="{ transitionDelay: `${i * 0.05}s` }"
-            >
-              <span class="mobile-link-index">0{{ i + 1 }}</span>
-              {{ link.label }}
+          <div class="mobile-nav-links">
+            <router-link v-for="link in links" :key="link.path" :to="link.path" class="mobile-nav-link" @click="mobileOpen = false">
+              {{ link.name }}
             </router-link>
           </div>
           <div class="mobile-menu-footer">
             <button @click="emit('toggle-theme')" class="mobile-theme">
               {{ isDark ? '☀️ Mode clair' : '🌙 Mode sombre' }}
             </button>
-            <a href="mailto:contact@emmapertusot.fr" class="mobile-email">contact@emmapertusot.fr</a>
+            <a href="mailto:epertusot@gmail.com" class="mobile-email">epertusot@gmail.com</a>
           </div>
         </div>
       </div>

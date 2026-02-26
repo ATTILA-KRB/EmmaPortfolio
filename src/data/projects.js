@@ -7,7 +7,7 @@ export const projects = [
     media: "L'Arrière-Cour",
     img: "https://wordpress.larrierecour.fr/wp-content/uploads/2025/10/GNO_1536-scaled-1-1024x707.jpg",
     url: "https://www.larrierecour.fr/2025/11/15/lamicale-du-nid-lyon-reconstruire-sa-vie-apres-la-prostitution",
-    color: "#C8102E",
+    color: "#ef4444",
     featured: true,
   },
   {
@@ -17,7 +17,7 @@ export const projects = [
     media: "Horizons Médiatiques",
     img: "https://horizonsmediatiques.eu/wp-content/uploads/2026/01/db793918-bb12-4f5b-a5a5-e7ecc1ef33d5.jpg",
     url: "https://horizonsmediatiques.eu/2026/01/13/sifflets-contre-sirenes-sur-le-terrain-la-resistance-locale-face-a-lice-sorganise/",
-    color: "#2563EB",
+    color: "#3b82f6",
     featured: true,
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     media: "Horizons Médiatiques",
     img: "https://horizonsmediatiques.eu/wp-content/uploads/2026/01/hjckknwcxxq-1024x683.jpg",
     url: "https://horizonsmediatiques.eu/2026/01/23/legalite-a-lembauche-entre-femmes-et-hommes-une-promesse-encore-inachevee/",
-    color: "#ec4899",
+    color: "#ef4444",
     featured: false,
   },
   {
@@ -59,7 +59,7 @@ export const projects = [
     media: "Horizons Médiatiques",
     img: "https://horizonsmediatiques.eu/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-12-at-16.52.18-1024x536.jpeg",
     url: "https://horizonsmediatiques.eu/2025/03/12/lanceurs-dalerte-leur-sante-mentale-sonne-un-cri-dalerte/",
-    color: "#f59e0b",
+    color: "#ef4444",
     featured: false,
   },
   {

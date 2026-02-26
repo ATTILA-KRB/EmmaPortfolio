@@ -78,14 +78,14 @@ onMounted(() => {
       <div class="hero-anim hero-ctas">
         <router-link to="/portfolio" class="btn-primary">Voir mes projets</router-link>
         <a href="/Emma_Pertusot_CV.pdf" download class="btn-secondary">Télécharger CV ↓</a>
+        <a href="https://www.linkedin.com/in/emma-p-32183b26a/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
       </div>
 
       <div class="hero-anim hero-stats">
         <div class="stat" v-for="(s, i) in [
           { num: '30+', label: 'Articles publiés' },
-          { num: '5', label: 'Expériences presse' },
-          { num: '6', label: 'Rédactions' },
-        ]" :key="i" :class="{ 'stat-border': i < 2 }">
+          { num: '6', label: 'Médias' },
+        ]" :key="i" :class="{ 'stat-border': i < 1 }">
           <div class="stat-num">{{ s.num }}</div>
           <div class="stat-label">{{ s.label }}</div>
         </div>
@@ -162,7 +162,7 @@ onMounted(() => {
           <h3 class="cta-title">Un projet en tête<span style="color: var(--accent)"> ?</span></h3>
           <p class="cta-desc">Discutons de comment je peux contribuer à votre rédaction.</p>
         </div>
-        <router-link to="/contact" class="btn-primary cta-btn">Me contacter →</router-link>
+        <a href="mailto:epertusot@gmail.com" class="btn-primary cta-btn">Me contacter →</a>
       </div>
     </div>
   </section>

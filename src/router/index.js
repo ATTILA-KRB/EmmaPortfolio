@@ -17,11 +17,6 @@ const routes = [
     component: () => import('@/pages/ExperiencePage.vue'),
   },
   {
-    path: '/contact',
-    name: 'contact',
-    component: () => import('@/pages/ContactPage.vue'),
-  },
-  {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     redirect: '/',

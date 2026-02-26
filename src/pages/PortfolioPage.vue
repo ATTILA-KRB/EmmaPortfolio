@@ -31,7 +31,7 @@ onMounted(animateCards)
     <section class="section">
       <div class="container">
         <SectionLabel label="Portfolio" />
-        <h1 class="page-title">Tous mes projets</h1>
+        <h1 class="page-title">Mes projets favoris</h1>
 
         <div class="filters">
           <button

@@ -143,8 +143,9 @@ onMounted(() => {
 }
 .tl-pulse {
   position: absolute;
-  left: 2.5px;
-  top: 2.5px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 11px;
   height: 11px;
   border-radius: 50%;

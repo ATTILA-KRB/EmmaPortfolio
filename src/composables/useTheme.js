@@ -7,7 +7,7 @@ export function useTheme() {
     valueDark: 'dark',
     valueLight: '',
     storageKey: 'emma-portfolio-theme',
-    initialValue: 'dark',
+    initialValue: 'light',
   })
 
   const toggleDark = useToggle(isDark)

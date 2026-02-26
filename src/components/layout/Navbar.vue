@@ -120,8 +120,8 @@ onUnmounted(() => {
   transition: all 0.5s var(--ease);
 }
 .nav-scrolled {
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter: blur(24px) saturate(180%);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(32px) saturate(200%);
   border-bottom: 1px solid var(--border);
 }
 .nav-transparent {
@@ -245,7 +245,8 @@ onUnmounted(() => {
   position: fixed;
   inset: 0;
   z-index: 105;
-  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 95%, transparent);
+  backdrop-filter: blur(24px);
   display: flex;
   flex-direction: column;
   padding-top: 80px;
@@ -255,7 +256,7 @@ onUnmounted(() => {
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  padding: 24px var(--gutter) calc(24px + env(safe-area-inset-bottom, 0px));
+  padding: 16px var(--gutter) calc(32px + env(safe-area-inset-bottom, 0px));
   overflow-y: auto;
 }
 .mobile-menu-links {

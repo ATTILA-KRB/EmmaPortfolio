@@ -13,20 +13,42 @@ gsap.registerPlugin(ScrollTrigger)
 const featured = projects.filter(p => p.featured)
 
 onMounted(() => {
-  gsap.fromTo('.hero-anim', { y: 40, opacity: 0 }, {
-    y: 0, opacity: 1, duration: 0.7, ease: 'power2.out', stagger: 0.15,
-  })
+  let mm = gsap.matchMedia()
 
-  gsap.utils.toArray('.reveal').forEach(el => {
-    gsap.fromTo(el, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 85%' },
+  mm.add("(min-width: 769px)", () => {
+    gsap.fromTo('.hero-anim', { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.7, ease: 'power2.out', stagger: 0.15,
+    })
+
+    gsap.utils.toArray('.reveal').forEach(el => {
+      gsap.fromTo(el, { y: 40, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+      })
+    })
+
+    gsap.fromTo('.featured-card', { y: 50, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.12,
+      scrollTrigger: { trigger: '.featured-grid', start: 'top 80%' },
     })
   })
 
-  gsap.fromTo('.featured-card', { y: 50, opacity: 0 }, {
-    y: 0, opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.12,
-    scrollTrigger: { trigger: '.featured-grid', start: 'top 80%' },
+  mm.add("(max-width: 768px)", () => {
+    gsap.fromTo('.hero-anim', { y: 20, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.5, ease: 'power2.out', stagger: 0.1,
+    })
+
+    gsap.utils.toArray('.reveal').forEach(el => {
+      gsap.fromTo(el, { y: 20, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.5, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 90%' },
+      })
+    })
+
+    gsap.fromTo('.featured-card', { x: 30, opacity: 0 }, {
+      x: 0, opacity: 1, duration: 0.5, ease: 'power2.out', stagger: 0.1,
+      scrollTrigger: { trigger: '.featured-grid', start: 'top 85%' },
+    })
   })
 })
 </script>
@@ -504,8 +526,8 @@ onMounted(() => {
     display: none;
   }
   .hero-letter {
-    font-size: clamp(180px, 50vw, 300px);
-    right: -8vw;
+    font-size: clamp(150px, 45vw, 250px);
+    right: -10vw;
   }
   .section {
     padding-top: 48px;
@@ -513,10 +535,34 @@ onMounted(() => {
   }
 }
 
+@media (max-width: 640px) {
+  .featured-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 16px;
+    margin: 0 -20px;
+    padding: 0 20px 20px 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .featured-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .featured-card {
+    min-width: 280px;
+    width: 80vw;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-stats {
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
   .stat {
     padding-right: 0;
@@ -524,8 +570,7 @@ onMounted(() => {
   }
   .stat-border {
     border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 16px;
+    border-bottom: none;
   }
   .hero-ctas {
     flex-direction: column;
